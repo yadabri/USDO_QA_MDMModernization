@@ -1,0 +1,197 @@
+
+DEV URL- https://searchservice.jhapps-dev.aks.manulife.com/searchOrganization
+TEST URL- https://searchservice.jhapps-tst.aks.manulife.com/searchOrganization
+UAT URL- https://searchservice.jhapps-uat.aks.manulife.com/searchOrganization
+
+// Case-1 Search with LobUUID
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "lobUUID": "1000001174945561088299713"
+    }
+}
+
+//Case-2 Search with OrgDetails(Only with orgName)
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "orgInfo": {
+            "orgName": "Agent International Organization",
+           // "tin": "099987150"
+        }
+    }
+}
+//Case-3 Search with OrgDetails(Only tin)
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "orgInfo": {
+           // "orgName": "Agent International Organization",
+            "tin": "099987150"
+        }
+    }
+}
+
+//Case -4 Search with OrganizationDetalis( for  orgName and tin)
+
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "orgInfo": {
+            "orgName": "Agent International Organization",
+            "tin": "099987150"
+        }
+    }
+}
+
+//Case -5 Search with LobUUID and OrganizationDetalis
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "lobUUID": "1000001175220645653423432",
+        "orgInfo": {
+            "orgName": "Agent International Organization",
+            "tin": "099987150"
+        }
+    }
+}
+
+Case-6. only AgentInfo (payroll number(entityTypeCode=100010))
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "agentInfo": [
+            {
+                "entityTypeCode": "1000010",
+                "entityRefNum": "455"
+            }
+        ]
+    }
+}
+Case-7. only AgentInfo (agent Code(entityTypeCode=100005))
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+        "agentInfo": [
+            {
+                "entityTypeCode": "1000005",
+                "entityRefNum": "455"
+            }
+        ]
+    }
+}
+
+
+
+Case 9. AgentInfo(if entityTypeCode=1000010) with OrganizationDetalis
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+       "orgInfo": {
+            "orgName": "Agent International Organization",
+           // "tin": "099987150"
+        }
+        "agentInfo": [
+            {
+                 "entityTypeCode": "1000010",
+                 "entityRefNum": "9876548"
+            }
+        ]
+    }
+}
+
+Case 10. AgentInfo(if entityTypeCode=1000005) with OrganizationDetalis
+
+{
+    "requesterName": "Life",
+    "requesterLanguage": "100",
+    "lineOfBusiness": "LIFE",
+    "company": "JH",
+    "clientSystemName": "SF",
+    "requestTimestamp": "2024-11-11T16:20:06.559",
+    "externalCorrelationId": "20250401000014994",
+    "partyInqLvl": "",
+    "contractInqLvl": "",
+    "party": {
+       "orgInfo": {
+            "orgName": "Agent International Organization",
+           // "tin": "099987150"
+        }
+        "agentInfo": [
+            {
+                 "entityTypeCode": "1000005",
+                 "entityRefNum": "9876548"
+            }
+        ]
+    }
+}
